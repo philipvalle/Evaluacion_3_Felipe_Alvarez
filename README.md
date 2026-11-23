@@ -1,7 +1,8 @@
 # Evaluación N°3 – Programación Web (TA_6)
 
-**Alumno:** Felipe Álvarez Valle
-**Asignatura:** Programación Web – IPLACEX
+Felipe Álvarez Valle
+
+Programación Web – IPLACEX
 
 Aplicación web desarrollada con **Flask** (framework de Python para construir aplicaciones web). Tiene un menú principal con dos botones, y cada botón abre un formulario:
 
