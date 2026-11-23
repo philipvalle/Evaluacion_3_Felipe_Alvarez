@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Evaluación 3{% endblock %} | Programación Web</title>
+    <!-- Hoja de estilos cargada desde la carpeta static en la página base -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <header class="barra">
+        <a class="barra-inicio" href="{{ url_for('index') }}">Programación Web · Evaluación 3</a>
+        <span class="barra-autor">Felipe Álvarez Valle</span>
+    </header>
+
+    <main class="contenido">
+        {% block contenido %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block titulo %}Ejercicio 1{% endblock %}
+
+{% block contenido %}
+<section class="tarjeta">
+    <h1>Formulario de Notas</h1>
+    <p class="ayuda">Ingresa 3 notas entre 10 y 70 y la asistencia entre 0 y 100.</p>
+
+    <form action="{{ url_for('ejercicio1') }}" method="POST" class="formulario">
+        <label for="nota1">Nota 1:</label>
+        <input type="number" id="nota1" name="nota1" min="10" max="70" step="any"
+               value="{{ datos.get('nota1', '') }}" required>
+
+        <label for="nota2">Nota 2:</label>
+        <input type="number" id="nota2" name="nota2" min="10" max="70" step="any"
+               value="{{ datos.get('nota2', '') }}" required>
+
+        <label for="nota3">Nota 3:</label>
+        <input type="number" id="nota3" name="nota3" min="10" max="70" step="any"
+               value="{{ datos.get('nota3', '') }}" required>
+
+        <label for="asistencia">Asistencia (%):</label>
+        <input type="number" id="asistencia" name="asistencia" min="0" max="100" step="any"
+               value="{{ datos.get('asistencia', '') }}" required>
+
+        <button type="submit" class="boton">Enviar</button>
+    </form>
+
+    {% if errores %}
+    <ul class="errores">
+        {% for error in errores %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if resultado %}
+    <div class="resultado">
+        <p>{{ resultado.promedio }}</p>
+        <p class="estado {{ 'aprobado' if resultado.estado == 'APROBADO' else 'reprobado' }}">{{ resultado.estado }}</p>
+    </div>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}" class="volver">← Volver al menú</a>
+</section>
+
+{% if historial %}
+<section class="tarjeta historial">
+    <h2>Cálculos realizados</h2>
+    <div class="tabla-contenedor">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nota 1</th>
+                    <th>Nota 2</th>
+                    <th>Nota 3</th>
+                    <th>Asistencia</th>
+                    <th>Promedio</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for registro in historial %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ '%g'|format(registro.notas[0]) }}</td>
+                    <td>{{ '%g'|format(registro.notas[1]) }}</td>
+                    <td>{{ '%g'|format(registro.notas[2]) }}</td>
+                    <td>{{ '%g'|format(registro.asistencia) }}%</td>
+                    <td>{{ registro.promedio }}</td>
+                    <td>{{ registro.estado }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <form action="{{ url_for('borrar_historial', ejercicio='1') }}" method="POST">
+        <button type="submit" class="boton boton-secundario">Borrar historial</button>
+    </form>
+</section>
+{% endif %}
+{% endblock %}

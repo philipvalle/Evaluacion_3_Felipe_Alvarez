@@ -1,0 +1,233 @@
+/* =========================================================
+   Estilos generales - Evaluación 3 Programación Web
+   Se cargan una sola vez desde templates/base.html
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* ---------- Barra superior ---------- */
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.barra-inicio {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.barra-autor {
+    font-size: 14px;
+    color: #777;
+}
+
+.contenido {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+/* ---------- Menú principal ---------- */
+.menu {
+    text-align: center;
+}
+
+.menu-titulo {
+    margin-bottom: 8px;
+}
+
+.menu-texto {
+    color: #666;
+    margin-bottom: 32px;
+}
+
+.menu-botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.boton-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 80px;
+    font-size: 22px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.boton-menu:hover {
+    background-color: #0056b3;
+}
+
+/* ---------- Tarjetas con formulario ---------- */
+.tarjeta {
+    max-width: 420px;
+    margin: 0 auto 24px;
+    padding: 28px 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta h1 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.centrada {
+    text-align: center;
+}
+
+.ayuda {
+    margin-top: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.centrada .formulario label {
+    font-weight: normal;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulario input:focus {
+    outline: 2px solid #007bff;
+    border-color: #007bff;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+.boton-secundario {
+    margin-top: 16px;
+    background-color: #6c757d;
+}
+
+.boton-secundario:hover {
+    background-color: #545b62;
+}
+
+/* ---------- Resultados y errores ---------- */
+.resultado {
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.resultado p {
+    margin: 8px 0;
+}
+
+.estado {
+    font-weight: bold;
+}
+
+.aprobado {
+    color: #1e7e34;
+}
+
+.reprobado {
+    color: #c82333;
+}
+
+.errores {
+    margin-top: 20px;
+    padding: 12px 16px 12px 32px;
+    background-color: #fdecea;
+    border: 1px solid #f5c2c7;
+    border-radius: 4px;
+    color: #842029;
+    text-align: left;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 24px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.volver:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Historial en memoria ---------- */
+.historial {
+    max-width: 760px;
+}
+
+.historial h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+}
+
+th {
+    background-color: #f7f7f7;
+}
